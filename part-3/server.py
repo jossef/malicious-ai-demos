@@ -19,6 +19,7 @@ class MyHandler(BaseHTTPRequestHandler):
         client_ip_address = self.client_address[0]
         if client_ip_address not in ALLOWED_CLIENTS:
             self.send_response(404)
+            print(f'{client_ip_address} not allowed')
             self.end_headers()
             return
 
